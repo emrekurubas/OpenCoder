@@ -1,51 +1,38 @@
-# Space Dodge Game Architecture
+# Space Dodge
 
-## Overview
+A terminal-based arcade game where you pilot a spaceship and dodge incoming asteroids.
 
-Space Dodge is a 2D terminal-based game implemented with Python's curses module. It features a player-controlled spaceship that must dodge falling asteroids while shooting them to earn points.
+## How to Play
 
-## Component Architecture
-
-### Core Classes
-```mermaid
-graph TD
-    subgraph Game Engine
-    A[Game] --> B[PlayerShip]
-    A --> C[Asteroid]
-    A --> D[Bullet]
-    A --> E[InputHandler]
-    A --> F[Renderer]
-    A --> G[CollisionDetector]
-    end
-
-    subgraph Game Logic
-    B --> H[Movement]
-    C --> I[Spawning]
-    D --> J[Targeting]
-    G --> K[Physics]
-    end
+```bash
+python3 main.py
 ```
 
-### Key Components
-1. **Game Controller**: Manages game state and main loop
-2. **Rendering System**: Handles terminal-based graphics with curses
-3. **Physics Engine**: Simple collision detection between game objects
-4. **Input System**: Captures and processes keyboard input
+## Controls
 
-## Design Principles
-- Object-oriented architecture with clear class separation
-- Single Responsibility Principle for game components
-- Separation of concerns between game logic and rendering
-- Clean architecture for maintainability
+| Key | Action |
+|-----|--------|
+| `UP` / `W` | Move up |
+| `DOWN` / `S` | Move down |
+| `R` | Restart (after game over) |
+| `Q` | Quit |
 
-## Implementation Details
-- Uses Python's curses module for terminal-based graphics
-- Frame-based game loop with variable FPS
-- Object pooling for asteroids and bullets
-- Score tracking and game state management (menu, playing, game over)
+## Gameplay
 
-## Future Enhancements
-- Add power-ups and special weapons
-- Implement levels with increasing difficulty
-- Add sound effects and better graphics
-- Implement high score persistence
+- You control a spaceship (`>`) on the left side of the screen
+- Asteroids (`*`) spawn from the right and move left
+- Dodge the asteroids to survive
+- Score increases for each asteroid that passes you
+- Difficulty increases as your score grows
+
+## Features
+
+- Color support (green player, red asteroids, yellow score)
+- Progressive difficulty
+- Score tracking
+- Game over screen with restart option
+
+## Requirements
+
+- Python 3.x
+- Terminal with curses support

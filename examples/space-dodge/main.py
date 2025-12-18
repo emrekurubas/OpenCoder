@@ -1,6 +1,6 @@
-# main.py
+#!/usr/bin/env python3
 import curses
-from game import Game
+from game import main
 
 if __name__ == '__main__':
-    curses.wrapper(Game().main_loop)
+    curses.wrapper(main)
